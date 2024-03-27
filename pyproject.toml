@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "datakit_start"
+version = "0.1.0"
+description = ""
+authors = ["Luciano Borba"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pre-commit = "^3.7.0"
+black = "^24.3.0"
+isort = "^5.13.2"
+pip-audit = "^2.7.2"
+pydocstyle = "^6.3.0"
+taskipy = "^1.12.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+format = "black . && isort ."
+check = "pip-audit && pydocstyle"
+
